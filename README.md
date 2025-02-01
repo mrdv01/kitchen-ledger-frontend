@@ -1,7 +1,7 @@
 # Kitchen Ledger Project
 
 ## Live Demo
-You can preview the live application at: [Kitchen Ledger Live Demo](https://kitchen-ledger-frontend.vercel.app/)
+You can preview the live application at: [Kitchen Ledger Live Demo](https://quiz-app-frontend-zmls-git-main-mrdevs-projects-a7590997.vercel.app/)
 
 ## Overview
 The Kitchen Ledger project is a web application designed to help groups of people living together track their shared expenses and transactions. It allows users to record purchases, split costs, and maintain an accurate ledger of shared financial activities, ensuring transparency and accountability among group members.
