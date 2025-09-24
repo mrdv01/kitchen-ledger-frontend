@@ -3,7 +3,7 @@ import Logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import { logoutAction } from "../../redux/slices/users/usersSlice";
 import { useDispatch } from "react-redux";
-import NotificationDropdown from "../notifications/NotficationDropdown";
+import NotificationDropdown from "../Notifications/NotficationDropdown";
 
 const Navbar = () => {
   const dispatch = useDispatch();
