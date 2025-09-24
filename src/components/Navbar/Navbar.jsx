@@ -3,6 +3,7 @@ import Logo from "./logo.svg";
 import { Link } from "react-router-dom";
 import { logoutAction } from "../../redux/slices/users/usersSlice";
 import { useDispatch } from "react-redux";
+import NotificationDropdown from "../notifications/NotficationDropdown";
 
 const Navbar = () => {
   const dispatch = useDispatch();
@@ -43,12 +44,17 @@ const Navbar = () => {
             </Link>
 
             {isLoggedIn && (
-              <button
-                className="text-black-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
-                onClick={logoutHandler}
-              >
-                Logout
-              </button>
+              <>
+                {/* Notification Dropdown */}
+                <NotificationDropdown />
+
+                <button
+                  className="text-black-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                  onClick={logoutHandler}
+                >
+                  Logout
+                </button>
+              </>
             )}
           </div>
 

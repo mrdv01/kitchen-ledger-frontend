@@ -17,8 +17,45 @@ import AllTransactions from "./components/Transcations/AllTransactions";
 import Transaction from "./components/Transcations/Transaction";
 import InsightsDashboard from "./components/Insights/InsightsDashboard";
 import Setting from "./components/Setting/Setting";
+import { addNotification } from "./redux/slices/notifications/notificationsSlice";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import socket from "./socket"; // your socket.js
+// import { Toaster, toast } from "react-hot-toast";
 
 function App() {
+  const dispatch = useDispatch();
+  const { groups } = useSelector((state) => state.groups.groups);
+
+  useEffect(() => {
+    socket.connect();
+
+    socket.on("connect", () => {
+      console.log("✅ Connected to socket:", socket.id);
+    });
+
+    socket.on("newNotification", (notif) => {
+      console.log("📩 Received notification:", notif);
+      dispatch(addNotification(notif));
+    });
+
+    return () => {
+      socket.off("newNotification");
+      socket.disconnect();
+    };
+  }, [dispatch]);
+
+  // Join group rooms whenever groups change
+  useEffect(() => {
+    console.log(groups);
+    if (groups?.length > 0) {
+      groups.forEach((g) => {
+        socket.emit("joinGroup", g._id);
+        console.log("Joined group:", g._id);
+      });
+    }
+  }, [groups]);
+
   return (
     <div>
       <Navbar />

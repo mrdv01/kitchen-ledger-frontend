@@ -1,4 +1,5 @@
 /* eslint-disable react/prop-types */
+// import io from "socket.io-client";
 import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -17,6 +18,18 @@ const DashboardLayout = ({ children, title, btn = null }) => {
   useEffect(() => {
     dispatch(fetchAllGroupAction());
   }, [dispatch, isAdded]);
+
+  // useEffect(() => {
+  //   console.log("HII");
+  //   if (!socket.connected) return;
+  //   console.log(groups);
+  //   if (groups?.length > 0) {
+  //     groups.forEach((g) => {
+  //       socket.emit("joinGroup", g._id);
+  //       console.log("Joined group:", g._id);
+  //     });
+  //   }
+  // }, [dispatch, groups]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
@@ -161,6 +174,8 @@ const DashboardLayout = ({ children, title, btn = null }) => {
           <h2 className="text-xl md:text-2xl font-semibold text-gray-700 truncate">
             {title}
           </h2>
+          {/* <NotificationDropdown /> */}
+
           {btn}
           {/* {isDashboardPage ? (
             <Link

@@ -4,6 +4,8 @@ import groupsReducer from "../slices/group/groupsSlice";
 import itemsReducer from "../slices/items/itemsSlice";
 import transactionsReducer from "../slices/transactions/transactionsSlice";
 
+import notificationsReducer from "../slices/notifications/notificationsSlice"
+
 
 //store
 const store = configureStore({
@@ -12,6 +14,7 @@ const store = configureStore({
         groups: groupsReducer,
         items: itemsReducer,
         transactions: transactionsReducer,
+        notifications: notificationsReducer,
     },
 });
 
