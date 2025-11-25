@@ -24,7 +24,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <a href="/" className="flex items-center">
               <img src={Logo} alt="Kitchen Ledger Logo" className="h-8 w-8" />
-              <span className="text-white ml-2 font-bold">Kitchen Ledger</span>
+              <span className="text-white ml-2 font-bold">Ledgerly</span>
             </a>
           </div>
 

@@ -48,7 +48,7 @@ const DashboardLayout = ({ children, title, btn = null }) => {
         } md:translate-x-0 md:static md:w-64 lg:w-72`}
       >
         <div className="flex flex-col h-full p-4">
-          <h1 className="text-xl md:text-2xl font-bold mb-6">KitchenLedger</h1>
+          <h1 className="text-xl md:text-2xl font-bold mb-6">Ledgerly</h1>
           <nav className="flex-1">
             <ul className="space-y-2">
               <li>

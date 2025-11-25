@@ -16,7 +16,7 @@ const HomePage = () => {
           </h2>
           <p className="text-xl mb-6 text-gray-400">
             Manage group expenses, track shared purchases, and keep your kitchen
-            finances in order with KitchenLedger.
+            finances in order with Ledgerly.
           </p>
           <Link
             to="/get-started"
